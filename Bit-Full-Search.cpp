@@ -1,4 +1,4 @@
-//0 ~ n-1の部分集合の全探索
+//0からn-1の部分集合の全探索
 
 void bitfullsearch(int n) {
     for (int bit = 0; bit < (1<<n); bit++) {
