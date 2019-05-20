@@ -21,11 +21,13 @@ struct UnionFind {
         return root(x) == root(y);
     }
 
-    void unite(int x, int y) { //xとyの属する集合を併合する
+    bool merge(int x, int y) { //xとyの属する集合を併合する
         x = root(x);
         y = root(y);
-        if (x == y) return; //根が同じ時はそのまま
-
-        par[x] = y; //xの根をyの根に付ける
+        if (x == y) return false; //根が同じ時はそのまま
+        if (par[x] > par[y]) swap(x, y);
+        par[x] += par[y];
+        par[y] = x;
+        return true;
     }
 };
