@@ -5,7 +5,7 @@ struct UnionFind {
 
     UnionFind(int N) : par(N) {
         //初めは全部の頂点が根になる
-        for (int i = 0; i < n; i++) par[i] = i;
+        for (int i = 0; i < N; i++) par[i] = i;
     }
 
     int root(int x) { //木の根を求める
