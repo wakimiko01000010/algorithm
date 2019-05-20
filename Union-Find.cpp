@@ -19,11 +19,11 @@ struct UnionFind {
         x = root(x); y = root(y);
         if (x == y) return false; //根が同じ時はそのまま
         if (par[x] > par[y]) swap(x, y); //要素が少ない方をくっつける
-        par[x] += par[y];
-        par[y] = x;
+        par[x] += par[y];   //子の要素数を根に足す
+        par[y] = x;         //根を設定する
         return true;
     }
     int size(int x) {
-        return -par[root(x)];
+        return -par[root(x)]; //根は要素を追加するたびに-1が足されるので、-parで同じ集合の要素数がわかる
     }
 };
